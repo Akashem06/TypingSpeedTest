@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(27, 27, 27);
+}
+.container {
+    position: relative;
+    bottom: 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60%;
+    width: 80%;
+}
+.timer {
+    margin-bottom: 50px;
+    font-weight: 700;
+    color: white;
+    font-size: 100px;
+}
+.bar {
+    height: 10%;
+    width: 80%;
+    display: inline-flex;
+}
+.listbar {
+    position: relative;
+    right: 28%;
+    flex: 1;
+    display: inline-flex;
+    list-style: none;
+    justify-content: space-evenly;
+    font-weight: 700;
+    font-size: 300%;
+    color: rgb(255, 255, 255);
+    text-shadow:0 0 5px rgb(0, 217, 255);
+}
+.listbar li {
+    cursor: pointer;
+    transition: color 0.75s ease;
+}
+.playAgain {
+    left: 15%;
+    bottom: 350%;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    background-image: url(Replay.png);
+    background-size: 100%;
+    background-color: rgb(255, 255, 255);
+
+    transform-style: preserve-3d;
+    transform: 
+    perspective(1000px)
+    rotateY(var(--rotateY))
+    rotateX(var(--rotateX));
+}
+.playAgain::before {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    inset: -5px;
+    background: rgb(0, 217, 255);
+    filter: blur(20px);
+    opacitY: 0.5;
+    transform: translateZ(-1px);
+}
+.playAgain::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    inset: -10px;
+    background: linear-gradient(45deg, rgb(176, 0, 199), rgb(39, 255, 208));
+    transform: translateZ(-50px);
+}
+
+.text {
+    font-size: 30px;
+    color: rgb(117, 117, 117);
+    text-align: justify;
+}
+.textBox {
+    width: 100%;
+    margin-top: 25px;
+    min-height: 55%;
+    max-height: 100%;
+    overflow-y: auto;
+}
+.textBox::-webkit-scrollbar {
+    width: 0;
+}
+.resultBar {
+    margin-top: 100px;
+    display: flex;
+    width: 100vw;
+    list-style: none;
+    justify-content: space-evenly;
+    font-weight: 700;
+    font-size: 300%;
+    color: rgb(255, 255, 255);
+    text-shadow:0 0 10px rgb(0, 217, 255);
+
+}
+.correct {
+    color: white;
+}
+.incorrect {
+    color: rgb(0, 0, 0);
+    background-color: rgb(252, 86, 86);
+}
+span {
+    position: relative;
+}
+.active {
+    z-index: 1;
+    position: absolute;
+    transition: left 0.15s, top 0.15s;
+}
+.active::before {
+    content: "";
+    position: absolute;
+    background: rgb(0, 217, 255);
+    height: 40px;
+    width: 3px;
+}
+.input-field {
+    opacity: 0;
+}
+.timer {
+    text-shadow:0 0 15px rgb(0, 217, 255);
+    user-select: none;
+    transition: color 0.75s ease, text-shadow 0.75s ease;
+}

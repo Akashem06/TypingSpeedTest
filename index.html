@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lora:wght@500&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel ="stylesheet" href ="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="timer">60</div>
+        <div class="bar">
+            <ul class="listbar">
+                <li style="cursor:default">Time:</li>
+                <li class="sec60" onclick = timeMode1()>60</li>
+                <li class="sec30" onclick = timeMode2() style="color: rgb(117, 117, 117)">30</li>
+                <li class="sec15" onclick = timeMode3() style="color: rgb(117, 117, 117)">15</li>
+            </ul>
+            <button class="playAgain playAgain_hover" onclick = reset()></button>
+        </div>
+        <input type="text" class="input-field">
+        <div class="textBox">
+            <div class="active"></div>
+            <p class="text"></p>
+            
+        </div>
+
+        <div class="resultDetails">
+            <ul class="resultBar">
+                <li>MISTAKES: <span class="mistakes">0</span></li>
+                <li>ACC: <span class="accuracy">100%</span></li>
+                <li>WPM: <span class="wordPer">0</span></li>
+                <li>RAW: <span class="rawWPM">0</span></li>
+            </ul>
+        </div>
+
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
